@@ -7,6 +7,8 @@ import csv
 import parsers
 import numpy as np
 from sklearn.linear_model import LinearRegression
+from sklearn.linear_model import LogistictRegression
+
 import matplotlib.pyplot as plt  
 #%matplotlib inline
 
