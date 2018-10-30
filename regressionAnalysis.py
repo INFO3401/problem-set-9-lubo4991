@@ -63,10 +63,11 @@ def linearAnalysis_Object(filename, targetY):
     
 
     
-#Problem 3
+#PROBLEM 3. Add a function to the LinearAnalysis object called runSimpleAnalysis. This function should take in an AnalysisData object as a parameter and should use this object to compute which variable best predicts how much sugar a candy contains using a linear regression. Print the variable name and the resulting fit.
 
 
-            
+#PROBLEM 4.Add a function to the LogisticAnalysis object called runSimpleAnalysis. This function should take in an AnalysisData object as a parameter and should use this object to compute which variable best predicts whether or not a candy is chocolate using logistic regression. Print the variable name and the resulting fit. Do the two functions find the same optimal variable? Does one outperform the other?  
+
 
     
 
