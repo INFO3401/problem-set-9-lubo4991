@@ -20,13 +20,13 @@ def _init_(self, type):
     
 def parseFile(self, filename):
     file = open(filename, encoding = 'utf-8')
-
     if (self.type =="csv"):
         reader=csv.reader(open(filename))
         for row in reader:
             self.data.append(row)
         else:
             self.data=open(filename).read()
+parseFile(self, 'candy-data.csv')
 
 #PROBLEM 2. Create a function to initialize a LinearAnalysis object that takes a targetY as its input parameter. Create the same function for LogisticAnalysis. Note that you will use the LinearAnalysis object to try to predict the amount of sugar in the candy and the LogisticAnalysis object to predict whether or not the candy is chocolate.
 
