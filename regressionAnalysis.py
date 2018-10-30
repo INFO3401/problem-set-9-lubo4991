@@ -37,7 +37,7 @@ parseFile(self, 'candy-data.csv')
 #plt.show()  
 
 
-def linearAnalysis_Object(filename, targetY):
+def linearAnalysis_Object(filename, self):
      df = pd.read_csv(filename, encoding='latin1')
     #prepping the data
      X = df[[:,1:9]]
@@ -61,14 +61,16 @@ def linearAnalysis_Object(filename, targetY):
      df = pd.DataFrame({'Actual': y_test, 'Predicted': y_pred})  
      df 
     
-    
+linearAnalysis_Object('candy-data.csv', self)
 
     
 #PROBLEM 3. Add a function to the LinearAnalysis object called runSimpleAnalysis. This function should take in an AnalysisData object as a parameter and should use this object to compute which variable best predicts how much sugar a candy contains using a linear regression. Print the variable name and the resulting fit.
 
+#def runSimpleAnalysis():
+
 
 #PROBLEM 4.Add a function to the LogisticAnalysis object called runSimpleAnalysis. This function should take in an AnalysisData object as a parameter and should use this object to compute which variable best predicts whether or not a candy is chocolate using logistic regression. Print the variable name and the resulting fit. Do the two functions find the same optimal variable? Does one outperform the other?  
 
-
+#def runSimpleAnalysis():
     
 
