@@ -106,6 +106,9 @@ class LogisticAnalysis:
 #Problem 3
 candy_data_lin_analysis = LinearAnalysis('sugarpercent')
 candy_data_lin_analysis.runSimpleAnalysis(candy_data)
+#candy_data_log_analysis = LogisticAnalysis('sugarpercent')
+#candy_data_log_analysis.runSimpleAnalysis2(candy_data)
+
 
 
 
