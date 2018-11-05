@@ -1,13 +1,12 @@
 #Lucas Bouchard
 
 
-import sys
+
 import pandas as pd
 import csv
-import parsers
 import numpy as np
 from sklearn.linear_model import LinearRegression
-from sklearn.linear_model import LogistictRegression
+#from sklearn.linear_model import LogistictRegression
 from sklearn.metrics import r2_score
 #import matplotlib.pyplot as plt  
 #%matplotlib inline
@@ -27,14 +26,17 @@ class AnalysisData:
         
     
 #function that opens file and removes string columns
-   def parserFile(self, filename):
+    def parserFile(self, filename):
         self.dataset=pd.read_csv(filename)
 
         #Exclude uncomparable variables from X_variables
         #self.X_variables=self.dataset[[:,1:12]]/1-9
         for variable in self.dataset.columns.values:
-            if variable != "competitorname","pricepercent", "windpercent":
-                self.X_variables.append(column)
+            if variable != "competitorname":
+                self.X_variables.append(variable)
+                
+candy_data = AnalysisData()
+candy_data.parserFile('candy-data.csv')
 #http://scikit-learn.org/stable/modules/generated/sklearn.metrics.r2_score.html          
 #PART (b) LinearAnalysis
 #Which will contain your functions for doing linear regression and have at a minimum attributes called bestX (which holds the best X predictor for your data), targetY (which holds the index to the target dependent variable), and fit (which will hold how well bestX predicts your target variable).
@@ -45,7 +47,7 @@ class LinearAnalysis:
         self.targetY = target_Y
         self.fit=None
     
-    def runSimpleAnalysis(self, data)
+    def runSimpleAnalysis(self, data):
         r2=-1
         best_variable=None
         #establish independent variable
@@ -76,15 +78,15 @@ class LogisticAnalysis:
         self.fit = ""
 
 #Problem 1
-Candy_data = AnalysisData()
-Candy_data.parserFile('candy-data.csv')
+#candy_data = AnalysisData()
+#candy_data.parserFile('candy-data.csv')
 
 #PROBLEM 2. Create a function to initialize a LinearAnalysis object that takes a targetY as its input parameter. Create the same function for LogisticAnalysis. Note that you will use the LinearAnalysis object to try to predict the amount of sugar in the candy and the LogisticAnalysis object to predict whether or not the candy is chocolate.
 
 
 #Problem 3
 candy_data_analysis = LinearAnalysis('sugarpercent')
-candy_data_analysis.runSimpleAnalysis(Candy_data)
+candy_data_analysis.runSimpleAnalysis(candy_data)
 
 
 
