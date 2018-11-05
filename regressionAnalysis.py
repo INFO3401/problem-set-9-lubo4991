@@ -19,7 +19,7 @@ from sklearn.metrics import r2_score
 class AnalysisData:
 
 #Initialize attributes
-    def _init_(self):
+    def __init__(self):
         self.dataset=[]
         self.X_variables=[]
     
@@ -42,7 +42,7 @@ candy_data.parserFile('candy-data.csv')
 #Which will contain your functions for doing linear regression and have at a minimum attributes called bestX (which holds the best X predictor for your data), targetY (which holds the index to the target dependent variable), and fit (which will hold how well bestX predicts your target variable).
 class LinearAnalysis:
     
-    def _init_(self,target_Y):
+    def __init__(self,target_Y):
         self.bestX =None
         self.targetY = target_Y
         self.fit=None
