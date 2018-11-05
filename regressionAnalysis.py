@@ -11,6 +11,7 @@ from sklearn.metrics import r2_score
 #import matplotlib.pyplot as plt  
 #%matplotlib inline
 
+#https://pythonspot.com/linear-regression/
 
 # PROBLEM 1. Using the candy-data.csv file in the repo, populate an AnalysisData object that will hold the data you'll use for today's problem set. You should read in the data from the CSV, store the data in the dataset variable, and initialize the xs (column name) and targetY variables appropriately. targetY should reference the variable describing whether or not a candy is chocolate.
 
@@ -73,9 +74,9 @@ class LinearAnalysis:
 class LogisticAnalysis:
     
     def __init__(self, data_targetY):
-        self.bestX = ""
+        self.bestX = None
         self.targetY = data_targetY
-        self.fit = ""
+        self.fit = None
 
 #Problem 1
 #candy_data = AnalysisData()
