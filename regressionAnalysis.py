@@ -49,8 +49,8 @@ class LinearAnalysis:
         self.fit=None
     
     def runSimpleAnalysis(self, data):
-        r2=-1
-        best_variable=None
+        linear_r2=-1
+        best_linear_variable=None
         #establish independent variable
         for column in data.X_variables:
             if column != self.targetY:
@@ -61,11 +61,11 @@ class LinearAnalysis:
                 regression.fit(Y_variable, data.dataset[self.targetY])
                 r_score = regression.predict(Y_variable)
                 r_score = r2_score(data.dataset[self.targetY],Y_variable)
-                if r_score > r2:
-                    r2 = r_score
-                    best_variable = column
-        self.bestX = best_variable
-        print(best_variable, r2)
+                if r_score > linear_r2:
+                    linear_r2 = r_score
+                    best_linear_variable = column
+        self.bestX = best_linear_variable
+        print(best_linear_variable, linear_r2)
         
         
         
@@ -73,17 +73,35 @@ class LinearAnalysis:
 #Part C
 class LogisticAnalysis:
     
-    def __init__(self, data_targetY):
+    def __init__(self, target_Y):
         self.bestX = None
-        self.targetY = data_targetY
+        self.targetY = target_Y
         self.fit = None
+    def runSimpleAnalysis2(self, data):
+        r2=-1
+        best_variable=None
+        #establish independent variable
+        for column in data.X_variables:
+            if column != self.targetY:
+                Y_variable= data.dataset[column].values
+                Y_variable=Y_variable.reshape(len(Y_variable),1)
+                #Regression 
+                regression = LogisticRegression()
+                regression.fit(Y_variable, data.dataset[self.targetY])
+                r_score = regression.predict(Y_variable)
+                r_score = r2_score(data.dataset[self.targetY],Y_variable)
+                if r_score > r2:
+                    r2 = r_score
+                    best_variable = column
+        self.bestX = best_variable
+        print(best_variable, r2)
 
 #Problem 1
 #candy_data = AnalysisData()
 #candy_data.parserFile('candy-data.csv')
 
 #PROBLEM 2. Create a function to initialize a LinearAnalysis object that takes a targetY as its input parameter. Create the same function for LogisticAnalysis. Note that you will use the LinearAnalysis object to try to predict the amount of sugar in the candy and the LogisticAnalysis object to predict whether or not the candy is chocolate.
-
+#ABOVE
 
 #Problem 3
 candy_data_lin_analysis = LinearAnalysis('sugarpercent')
