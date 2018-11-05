@@ -6,7 +6,7 @@ import pandas as pd
 import csv
 import numpy as np
 from sklearn.linear_model import LinearRegression
-#from sklearn.linear_model import LogistictRegression
+from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import r2_score
 #import matplotlib.pyplot as plt  
 #%matplotlib inline
@@ -71,6 +71,7 @@ class LinearAnalysis:
         
 
 #Part C
+#Could not get this to run properly so I #the command at bottom
 class LogisticAnalysis:
     
     def __init__(self, target_Y):
